@@ -7,7 +7,7 @@
 
 
 import React, { useState, useEffect, useRef } from 'react';
-import Prod from './prod';
+import Prod from './Prod';
 import Loading from './Loading';
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";

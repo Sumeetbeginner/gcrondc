@@ -1,5 +1,5 @@
 import React from "react";
-import SellerForm from "./sellerForm";
+import SellerForm from "./SellerFormellerForm";
 import Sproducts from "./seller/Sproducts";
 import Profile from "./seller/Profile";
 import Insights from "./seller/Insights";
