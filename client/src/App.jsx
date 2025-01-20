@@ -80,6 +80,16 @@ function App() {
     }
   }, [location.pathname, navigate]);
 
+  // Remove sid from localStorage on reload and redirect to login
+  useEffect(() => {
+    // This effect will run on each reload, and clear sid if it exists
+    const sid = localStorage.getItem('sid');
+    if (sid) {
+      localStorage.removeItem('sid');  // Remove sid
+      navigate('/');  // Redirect to login
+    }
+  }, [navigate]);
+
   return (
     <Routes>
       <Route path="/home" element={
