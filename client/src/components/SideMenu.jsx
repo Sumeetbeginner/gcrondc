@@ -1,8 +1,10 @@
 import React from 'react'
-
+import {useNavigate} from 'react-router-dom'
 
 
 export default function SideMenu({ setSellerState, sellerState }) {
+
+    const navigate = useNavigate()
     
     return (
         <div className='sideMenu'>
@@ -23,7 +25,7 @@ export default function SideMenu({ setSellerState, sellerState }) {
                 <br />
                 <div onClick={async()=>{
                     await localStorage.clear()
-                    window.location.href = '/';
+                    navigate('/')
                 }}> <i class="fa-solid fa-right-from-bracket"></i> Sign Out</div>
             </div>
         </div>
