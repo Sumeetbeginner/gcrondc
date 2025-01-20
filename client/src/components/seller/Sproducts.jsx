@@ -154,7 +154,7 @@ export default function Sproducts({ searchQuery, searchRes, sid }) {
     const fetchData = async () => {
       try {
         // await new Promise((_) => setTimeout(_, 0));
-        const res = await fetch("http://127.0.0.1:3001/seller/viewsproducts", {
+        const res = await fetch("https://gcrneuratechserver.vercel.app/seller/viewsproducts", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -223,7 +223,7 @@ export default function Sproducts({ searchQuery, searchRes, sid }) {
 
   const handleSaveClick = async (id) => {
     try {
-      const res = await fetch("http://127.0.0.1:3001/seller/updateproduct", {
+      const res = await fetch("https://gcrneuratechserver.vercel.app/seller/updateproduct", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -263,7 +263,7 @@ export default function Sproducts({ searchQuery, searchRes, sid }) {
     try {
       const userConfirmed = confirm("Do you want to Delete item?");
       if (!userConfirmed) return
-      const res = await fetch("http://127.0.0.1:3001/seller/removeproduct", {
+      const res = await fetch("https://gcrneuratechserver.vercel.app/seller/removeproduct", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

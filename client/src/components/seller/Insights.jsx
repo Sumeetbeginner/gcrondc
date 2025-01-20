@@ -91,7 +91,7 @@ export default function Insights({sid}) {
     let isMounted = true;
     async function fetchData() {
       try {
-        const res = await fetch("http://127.0.0.1:3001/seller/viewsproducts", {
+        const res = await fetch("https://gcrneuratechserver.vercel.app/seller/viewsproducts", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
