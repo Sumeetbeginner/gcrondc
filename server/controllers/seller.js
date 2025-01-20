@@ -401,7 +401,16 @@ export const updateProduct = async (req, res) => {
   }
 };
 
-const upload = multer({ dest: 'uploads/' });
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, '/tmp');
+  },
+  filename: (req, file, cb) => {
+    cb(null, `${Date.now()}-${file.originalname}`);
+  }
+});
+
+const upload = multer({ storage: storage });
 
 export const addProductsFromFile = async (req, res) => {
   try {
