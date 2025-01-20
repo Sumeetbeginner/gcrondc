@@ -47,7 +47,7 @@ const Register = () => {
 
         try {
 
-            const response = await fetch('http://localhost:3001/seller/register', {
+            const response = await fetch('https://gcrneuratechserver.vercel.app/seller/register', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

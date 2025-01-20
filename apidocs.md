@@ -4,7 +4,7 @@
 # Before testing data in postman change its value inside
 
 1. **View Product** - `POST`  
-   **URL**: `http://localhost:3001/buyer/viewproduct`  
+   **URL**: `https://gcrneuratechserver.vercel.app/buyer/viewproduct`  
    **Body (JSON)**:
    ```json
    {
@@ -13,11 +13,11 @@
    ```
 
 2. **Filtered Products** - `GET`  
-   **URL**: `http://localhost:3001/buyer/filteredproducts?category=electronics&priceMin=100&priceMax=1000&minAvailable=0&maxAvailable=1000&page=1&limit=5&recent=false&sortAtoZ=false`  
+   **URL**: `https://gcrneuratechserver.vercel.app/buyer/filteredproducts?category=electronics&priceMin=100&priceMax=1000&minAvailable=0&maxAvailable=1000&page=1&limit=5&recent=false&sortAtoZ=false`  
    **Note**: You can modify the query params in Postman. This example filters by category `electronics` and price range from 100 to 1000.
 
 3. **Search Product** - `POST`  
-   **URL**: `http://localhost:3001/buyer/searchp`  
+   **URL**: `https://gcrneuratechserver.vercel.app/buyer/searchp`  
    **Body (JSON)**:
    ```json
    {
@@ -30,7 +30,7 @@
 ### **API TEST - SELLER**
 
 1. **Seller Register** - `POST`  
-   **URL**: `http://localhost:3001/seller/register`  
+   **URL**: `https://gcrneuratechserver.vercel.app/seller/register`  
    **Body (JSON)**:
    ```json
    {
@@ -51,7 +51,7 @@
    ```
 
 2. **Seller Login** - `POST`  
-   **URL**: `http://localhost:3001/seller/login`  
+   **URL**: `https://gcrneuratechserver.vercel.app/seller/login`  
    **Body (JSON)**:
    ```json
    {
@@ -61,7 +61,7 @@
    ```
 
 3. **Add Product** - `POST`  
-   **URL**: `http://localhost:3001/seller/addproduct`  
+   **URL**: `https://gcrneuratechserver.vercel.app/seller/addproduct`  
    **Body (JSON)**:
    ```json
    {
@@ -92,7 +92,7 @@
    ```
 
 4. **Get Template** - `POST`  
-   **URL**: `http://localhost:3001/seller/gettemplate`  
+   **URL**: `https://gcrneuratechserver.vercel.app/seller/gettemplate`  
    **Body (JSON)**:
    ```json
    {
@@ -101,7 +101,7 @@
    ```
 
 5. **Update Product** - `POST`  
-   **URL**: `http://localhost:3001/seller/updateproduct`  
+   **URL**: `https://gcrneuratechserver.vercel.app/seller/updateproduct`  
    **Body (JSON)**:
    ```json
    {
@@ -116,7 +116,7 @@
    ```
 
 6. **Remove Product** - `POST`  
-   **URL**: `http://localhost:3001/seller/removeproduct`  
+   **URL**: `https://gcrneuratechserver.vercel.app/seller/removeproduct`  
    **Body (JSON)**:
    ```json
    {
@@ -126,7 +126,7 @@
    ```
 
 7. **Add Products from File** - `POST`  
-   **URL**: `http://localhost:3001/seller/addproductsfile`  
+   **URL**: `https://gcrneuratechserver.vercel.app/seller/addproductsfile`  
    **Form Data (key-value pairs)**:
    - **key**: `file` (Select your CSV or Excel file to upload from the file explorer)
    - **key**: `sid` (Seller ID, for example: `67790b6a10ef041401a0ec6a`)

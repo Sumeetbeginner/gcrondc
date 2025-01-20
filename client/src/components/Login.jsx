@@ -17,7 +17,7 @@ const Login = () => {
     console.log('Login data:', formData);
 
     try {
-      const response = await fetch("http://localhost:3001/seller/login", {
+      const response = await fetch("https://gcrneuratechserver.vercel.app/seller/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

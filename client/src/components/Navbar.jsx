@@ -52,7 +52,7 @@ export default function Navbar({ setSearchQuery, setSearchRes, sid,setSellerStat
 
   const fetchSearchData = async () => {
     try {
-      const res = await fetch(" http://localhost:3001/buyer/searchp", {
+      const res = await fetch(" https://gcrneuratechserver.vercel.app/buyer/searchp", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

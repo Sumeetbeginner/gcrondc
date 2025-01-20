@@ -37,7 +37,7 @@ export default function BulkUpload() {
             try {
                 setUploadStatus('Uploading...');
 
-                const response = await fetch('http://localhost:3001/seller/addproductsfile', {
+                const response = await fetch('https://gcrneuratechserver.vercel.app/seller/addproductsfile', {
                     method: 'POST',
                     body: formData,
                 });

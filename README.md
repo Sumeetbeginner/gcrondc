@@ -62,7 +62,7 @@ To run this project locally, follow the instructions below.
    nodemon index.js
    ```
 
-   The backend server will be running at `http://localhost:3001`.
+   The backend server will be running at `https://gcrneuratechserver.vercel.app`.
 
 ---
 

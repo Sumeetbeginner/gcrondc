@@ -15,7 +15,7 @@ export default function Profile({sid}) {
 
     async function fetchData() {
       try {
-        const res = await fetch("http://localhost:3001/seller/sellerinfo", {
+        const res = await fetch("https://gcrneuratechserver.vercel.app/seller/sellerinfo", {
           method: "POST",
           headers: {
             'Content-Type': 'application/json'

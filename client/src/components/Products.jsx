@@ -50,7 +50,7 @@ export default function Products({ searchQuery, searchRes }) {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3001/buyer/filteredproducts?category=${choosenCategory}&priceMin=${priceMin}&priceMax=${priceMax}&minAvailable=${minAvailable}&maxAvailable=${maxAvailable}&page=${currentPg}&limit=10&recent=${recentOrder?1:0}&sortAtoZ=${sortedOrder?1:0}`
+          `https://gcrneuratechserver.vercel.app/buyer/filteredproducts?category=${choosenCategory}&priceMin=${priceMin}&priceMax=${priceMax}&minAvailable=${minAvailable}&maxAvailable=${maxAvailable}&page=${currentPg}&limit=10&recent=${recentOrder?1:0}&sortAtoZ=${sortedOrder?1:0}`
         );
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
