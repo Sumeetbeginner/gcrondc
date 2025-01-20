@@ -23,8 +23,8 @@ function App() {
   const [searchRes, setSearchRes] = useState()
 
   // Handle the sid (seller ID)
-  let sid = localStorage.getItem('sid') || "677bdf07dd9457b5d727c6cf";
-
+  let sid = localStorage.getItem('sid')
+  
   // Handle floating buttons visibility
   const containerARef = useRef(null);
   const bottomMarkerRef = useRef(null);
