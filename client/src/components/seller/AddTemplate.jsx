@@ -122,7 +122,7 @@ export default function AddTemplate({sid,setRegular}) {
 
 
         try {
-            const templateResponse = await fetch("http://localhost:3001/seller/addtemplate", {
+            const templateResponse = await fetch("https://gcrneuratechserver.vercel.app/seller/addtemplate", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -146,7 +146,7 @@ export default function AddTemplate({sid,setRegular}) {
 
 
         try {
-            const response = await fetch("http://localhost:3001/seller/addproduct", {
+            const response = await fetch("https://gcrneuratechserver.vercel.app/seller/addproduct", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
