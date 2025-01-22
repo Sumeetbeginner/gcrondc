@@ -3,10 +3,10 @@
 import React, { useState, useEffect } from "react";
 import Loading from "./Loading";
 
-export default function SingleUpload({sid}) {
+export default function SingleUpload({ sid, setRegular }) {
     const [formData, setFormData] = useState({});
     const [simg, setSimg] = useState('')
-    
+
     const [categoryBadges, setCategoryBadges] = useState([
         ["Electronics", "fas fa-plug"],
         ["Food", "fas fa-utensils"],
@@ -19,6 +19,7 @@ export default function SingleUpload({sid}) {
         ["Toys", "fas fa-car-side"],
         ["Sports", "fas fa-futbol"],
         ["Beauty", "fa-brands fa-gratipay"],
+
     ]);
     const [isLoading, setIsLoading] = useState(true);
     const [selectedCategory, setSelectedCategory] = useState(
@@ -31,7 +32,7 @@ export default function SingleUpload({sid}) {
         let isMounted = true; // Track if the component is mounted
         const fetchData = async () => {
             try {
-                const res = await fetch("https://gcrneuratechserver.vercel.app/seller/gettemplate", {
+                const res = await fetch("http://localhost:3001/seller/gettemplate", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -46,6 +47,18 @@ export default function SingleUpload({sid}) {
                             data.templates.filter((tp) => tp.category === selectedCategory)
                         );
                         setIsLoading(false);
+
+                        // Dynamically update categoryBadges
+                        const newCategoryBadges = [...categoryBadges]; // Copy current badges
+                        data.templates.forEach((template) => {
+                            // Check if the category already exists in the state
+                            const exists = newCategoryBadges.some((badge) => badge[0] === template.category);
+                            if (!exists) {
+                                // Add new category with the default icon
+                                newCategoryBadges.push([template.category, "fas fa-home"]);
+                            }
+                        });
+                        setCategoryBadges(newCategoryBadges); // Update state with new badges
                     }
                 }
             } catch (error) {
@@ -103,11 +116,11 @@ export default function SingleUpload({sid}) {
             ISBN: formData.ISBN || null,
             skinType: formData.skinType || null,
             applicationMethod: formData.applicationMethod || null,
-            sid:sid
+            sid: sid
         };
 
         try {
-            const response = await fetch("https://gcrneuratechserver.vercel.app/seller/addproduct", {
+            const response = await fetch("http://localhost:3001/seller/addproduct", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -172,15 +185,19 @@ export default function SingleUpload({sid}) {
                         <i className={badge[1]}></i> {badge[0]}
                     </div>
                 ))}
+                <div className="myAddButton" onClick={() => setRegular(false)} style={{ marginLeft: "auto" }}>
+                    <i className="fas fa-add" ></i> Add Template
+                </div>
             </div>
 
             {isLoading ? (
                 <Loading />
             ) : (
+
                 <div className="s-singleForm">
                     <div className="s-f1">
                         <div className="s-uploadBtn" onClick={handleImageSelect}>
-                            {simg?<img height={'100%'} width={'100%'} src={simg}/>:
+                            {simg ? <img height={'100%'} width={'100%'} src={simg} /> :
                                 <>
                                     <i className="fas fa-plus" style={{ fontSize: "50px" }}></i>
                                     <p>Select Image</p>
@@ -219,6 +236,7 @@ export default function SingleUpload({sid}) {
                         <button onClick={handleSubmit}>Submit</button>
                     </div>
                 </div>
+
             )}
         </div>
     );
