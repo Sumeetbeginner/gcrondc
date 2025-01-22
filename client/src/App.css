@@ -718,12 +718,14 @@ body {
 }
 
 .s-badges {
-  width: 100%;
+  width: 95%;
   display: flex;
   gap: 10px;
-  overflow-x: auto;
+  flex-wrap: wrap;
+  /* overflow-x: scroll; */
 
 }
+
 
 
 .s-badges div {
@@ -736,10 +738,21 @@ body {
   font-weight: 600;
 }
 
+.myAddButton{
+  background: var(--lmaterial)!important;
+  color: var(--light)!important;
+  margin-right: 16px;
+  margin-left: auto;
+}
+
+
+
+
 .s-singleForm {
   display: flex;
   flex-direction: column;
   height: 92%;
+  overflow-y:scroll;
   /* background: #000; */
 }
 
