@@ -721,3 +721,31 @@ export const sellerData = async(req,res)=>{
     });
   }
 }
+
+
+export const addTemplate = async (req, res) => {
+  try {
+      const { category, fields } = req.body;
+
+      if (!category || !fields || !Array.isArray(fields)) {
+          return res.status(400).json({
+              message: "Invalid request. 'category' and 'fields' are required.",
+          });
+      }
+
+      const newTemplate = new Template({ category, fields });
+      await newTemplate.save();
+
+      return res.status(201).json({
+          message: "Template saved successfully!",
+          template: newTemplate,
+      });
+  } catch (error) {
+      console.error(error);
+      return res.status(500).json({
+          message: "Internal Server Error",
+          error: error.message,
+      });
+  }
+};
+
