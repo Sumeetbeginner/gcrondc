@@ -8,7 +8,8 @@ import {
   viewSProduct, 
   removeProduct, 
   updateProduct, 
-  sellerData 
+  sellerData,
+  addTemplate
 } from '../controllers/seller.js';
 import multer from 'multer';
 
@@ -17,6 +18,7 @@ const upload = multer({ dest: '/tmp' });
 
 const router = express.Router();
 
+router.post('/addtemplate', addTemplate )
 router.post('/sellerinfo', sellerData);
 router.post('/viewsproducts', viewSProduct);
 router.post('/register', registerSeller);
