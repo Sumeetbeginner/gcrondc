@@ -32,7 +32,7 @@ export default function SingleUpload({ sid, setRegular }) {
         let isMounted = true; // Track if the component is mounted
         const fetchData = async () => {
             try {
-                const res = await fetch("http://localhost:3001/seller/gettemplate", {
+                const res = await fetch("https://gcrneuratechserver.vercel.app/seller/gettemplate", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -120,7 +120,7 @@ export default function SingleUpload({ sid, setRegular }) {
         };
 
         try {
-            const response = await fetch("http://localhost:3001/seller/addproduct", {
+            const response = await fetch("https://gcrneuratechserver.vercel.app/seller/addproduct", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
