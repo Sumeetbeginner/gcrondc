@@ -6,7 +6,7 @@ Welcome to **GCRNeuraTech**! This project is a web application hosted on [gcrneu
 ## Live Demo
 
 You can access the live demo of the project here:  
-**[gcrneuratech.vercel.app](https://gcrneuratech.vercel.app)**
+**[https://gcrneuratechondc.vercel.app/](https://gcrneuratechondc.vercel.app/)**
 
 ### Login Credentials
 
