@@ -1,7 +1,7 @@
 
-# GCRNeuraTech
+# Global Catalog Repository
 
-Welcome to **GCRNeuraTech**! This project is a web application hosted on [gcrneuratech.vercel.app](https://gcrneuratech.vercel.app).
+Welcome to **Global Catalog Repository**!
 
 ## Live Demo
 
