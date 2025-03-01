@@ -95,6 +95,4 @@ The **Global Catalog Registry (GCR)** is a centralized system designed to standa
 
 ## To access API Documentation Open - `apidocs.md` in root folder
 
-# Created by Team Neuratech
-
 Contact - `sumeetgupta3690@gmail.com`
